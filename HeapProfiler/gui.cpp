@@ -1,9 +1,23 @@
 #include "gui.h"
+#include <sstream>
+#include <iomanip>
 
-void initGUI() {
+std::string to_hex(ADDRESS i)
+{
+    std::stringstream stream;
+    stream << "0x"
+        << std::setfill('0') << std::setw(sizeof(ADDRESS) * 2)
+        << std::hex << i;
+    return stream.str();
+}
+
+void initGUI(vector<MallocFunc>& mallocs) {
     using namespace ftxui;
 
-    vector<string> modules = GetModuleNames();
+    vector<string> modules;
+    for (auto m : mallocs) {
+        modules.push_back(to_hex(m.addr) + ": " + m.version.name + " in " + GetModuleNameAt(m.addr));
+    }
     
     int selected = 0;
     

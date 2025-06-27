@@ -8,7 +8,7 @@
 #include "gui.h"
 
 void mainThread() {
-    initGUI();
+    
     MH_Initialize();
 
     
@@ -34,6 +34,8 @@ void mainThread() {
             mallocs_found.insert(mallocs_found.end(), found.begin(), found.end());
         }
     }
+
+    initGUI(mallocs_found);
 }
 
 BOOL APIENTRY DllMain(HINSTANCE hInst     /* Library instance handle. */,

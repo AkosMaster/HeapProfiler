@@ -5,5 +5,28 @@ Architecture: x86-windows
 Multi-Arch: same
 Abi: 7c6aa60c6d3a1712c4c23964c8a3dc4778030d6e2552c20c0ea2e8896c05833c
 Description: Public Domain Curses - a curses library for environments that don't fit the termcap/terminfo model.
+Status: purge ok not-installed
+
+Package: vcpkg-cmake-config
+Version: 2024-05-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: acc55305b9b8c761fe6ebf509321b58583c64b2d830dcbbb8d139e175528d0a5
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2024-04-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 3caac1ca55e630f85b77bc296a7ff933e626ae95f8d77af259c42dc2b211fbea
+Status: install ok installed
+
+Package: ftxui
+Version: 5.0.0
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 5cfedf1d99c384a5eebb0966efdf3fb4e6bae0399b7011ec8dc0a1d279323bd8
+Description: C++ Functional Terminal User Interface
 Status: install ok installed
 

@@ -10,4 +10,5 @@
 #include <ftxui/component/component_options.hpp>
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
-void initGUI();
+#include "scan.h"
+void initGUI(vector<MallocFunc>& mallocs);

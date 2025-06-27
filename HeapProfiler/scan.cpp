@@ -39,8 +39,8 @@ vector<MallocFunc> ScanRegion(MEMORY_BASIC_INFORMATION Mem) {
         for (int i = 0; i < malloc_versions.size(); i++) {
             vector<ADDRESS> addrs = FindPattern((ADDRESS)Mem.BaseAddress, (ADDRESS)Mem.RegionSize, malloc_versions[i].pattern, malloc_versions[i].mask);
             for (int j = 0; j < addrs.size(); j++) {
-                cout << malloc_versions[i].name << " at " << hex << addrs[j] << " in "; PrintModName(GetModuleAt(addrs[j])); cout << "\n";
-                  found.push_back(MallocFunc(malloc_versions[i], addrs[j]));
+                //cout << malloc_versions[i].name << " at " << hex << addrs[j] << " in "; PrintModName(GetModuleAt(addrs[j])); cout << "\n";
+                found.push_back(MallocFunc(malloc_versions[i], addrs[j]));
             }
         }
 

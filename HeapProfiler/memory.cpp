@@ -1,6 +1,26 @@
 
 #include "memory.h"
 
+string GetModuleNameAt(ADDRESS address) {
+    HMODULE hmod;
+    GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS, (LPCWSTR)(void*)address, &hmod);
+
+    TCHAR szModName[MAX_PATH];
+
+    // Get the full path to the module's file.
+
+    if (GetModuleFileName(hmod, szModName,
+        sizeof(szModName) / sizeof(TCHAR)))
+    {
+        // Print the module name and handle value.
+
+        //_tprintf(TEXT("\t%s (0x%08X)\n"), szModName, hMods[i]);
+        wstring wstr = wstring(szModName);
+        return string(wstr.begin(), wstr.end());
+    }
+    return "<error>";
+}
+
 vector<string> GetModuleNames()
 {
     DWORD processID = GetCurrentProcessId();
@@ -82,25 +102,13 @@ MODULEINFO GetModuleInfo( LPCWSTR szModule )
     return modinfo;
 }
 
-HMODULE GetModuleAt(ADDRESS addr) {
+/*HMODULE GetModuleAt(ADDRESS addr) {
     MEMORY_BASIC_INFORMATION mbi;
     if (VirtualQuery((void*)addr, &mbi, sizeof(mbi)))
     {
         return (HMODULE)mbi.AllocationBase;
     }
-}
-
-void PrintModName(HMODULE mod) {
-    TCHAR szModName[MAX_PATH];
-    if (GetModuleFileName(mod, szModName,
-        sizeof(szModName) / sizeof(TCHAR)))
-    {
-        _tprintf(TEXT("%s"), szModName);
-    }
-    else {
-        cout << "error";
-    }
-}
+}*/
 
 // is there a better way? :)
 bool isExecutable(DWORD protection) {
