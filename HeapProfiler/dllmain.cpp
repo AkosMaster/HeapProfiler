@@ -37,11 +37,11 @@ void mainThread() {
     }
 
     for (auto m : mallocs_found) {
-        createHook(m);
-        
-        
+        createHook(m);    
         GUI_addMallocFunc(to_hex(m.addr) + ": " + m.version.name + " in " + GetModuleNameAt(m.addr));
     }
+
+    
 }
 
 BOOL APIENTRY DllMain(HINSTANCE hInst     /* Library instance handle. */,

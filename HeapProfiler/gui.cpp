@@ -8,9 +8,23 @@
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
 
+#include "tracking.h"
+
 using namespace ftxui;
 
 ScreenInteractive* screen;
+
+ButtonOption ButtonStyle() {
+    auto option = ButtonOption::Animated();
+    option.transform = [](const EntryState& s) {
+        auto element = text(s.label);
+        if (s.focused) {
+            element |= bold;
+        }
+        return element | center | borderEmpty | flex;
+        };
+    return option;
+}
 
 std::string to_hex(ADDRESS i)
 {
@@ -35,21 +49,15 @@ void GUI_addMallocFunc(string desc) {
     });
 }
 
-ftxui::Component TAB_hooks() {
-    auto container = Container::Horizontal({
-        Menu(&mallocFuncs, &malloc_selected),
-    });
-    return Renderer(container, [&] { 
-        return vbox({
-            text("Scan progress:"),
-            gauge(scanProgress),
-            
-            window(text("Hooks"), {
-                container->Render()
-            })
-        });
-    });
-    
+vector<string> allocationTitles = {};
+int allocation_selected = 0;
+void GUI_refreshAllocList() {
+    allocationTitles.clear();
+    auto infos = allocationList();
+    for (auto info : infos) {
+        allocationTitles.push_back(to_hex(info.addr) + ": " + to_hex(info.size));
+    }
+    screen->PostEvent(Event::Custom);
 }
 
 void initGUI() {
@@ -59,23 +67,56 @@ void initGUI() {
       "Allocations",
       "Options",
     };
+
+    // TAB_HOOKS
+
+    auto hooks_menu = Menu(&mallocFuncs, &malloc_selected);
+    auto tab_hooks = Renderer(hooks_menu, [&] {
+        return vbox({
+            text("Scan progress:"),
+            gauge(scanProgress),
+
+            window(text("Hooks"), {
+                hooks_menu->Render() | vscroll_indicator | frame |
+           size(HEIGHT, LESS_THAN, 10) | border
+            })
+        });
+    });
+    // TAB_ALLOCS
+    auto allocs_btn = Button("Refresh", [] { GUI_refreshAllocList(); });
+    auto allocs_menu = Menu(&allocationTitles, &allocation_selected);
+
+    auto allocs_menu_renderer = Renderer(allocs_menu, [&] {
+        return vbox({
+            window(text("Allocations"), {
+                allocs_menu->Render() | vscroll_indicator | frame |
+           size(HEIGHT, LESS_THAN, 10) | border
+            }),
+        });
+    });
+    auto tab_allocs = Container::Vertical({
+        allocs_btn, allocs_menu_renderer    
+    });
+
+    // MAIN WINDOW
+
     int tab_selected = 0;
     auto tab_toggle = Toggle(&tab_values, &tab_selected);
     
     auto tab_container = Container::Tab(
         {
-            TAB_hooks(),
-            Renderer([&] {return text("TODO"); }),
+            tab_hooks,
+            tab_allocs,
             Renderer([&] {return text("TODO"); }),
         },
         &tab_selected);
 
-    auto container = Container::Vertical({
+    auto main_container = Container::Vertical({
         tab_toggle,
         tab_container,
     });
 
-    auto GUIRenderer = Renderer(container, [&] {
+    auto GUIRenderer = Renderer(main_container, [&] {
         return vbox({
                    tab_toggle->Render(),
                    separator(),
