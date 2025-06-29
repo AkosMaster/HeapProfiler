@@ -39,6 +39,9 @@
     <ClInclude Include="gui.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="tracking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -55,6 +58,9 @@
     </ClCompile>
     <ClCompile Include="gui.cpp">
       <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="tracking.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -97,6 +97,7 @@
     <ClInclude Include="memory.h" />
     <ClInclude Include="MinHook.h" />
     <ClInclude Include="scan.h" />
+    <ClInclude Include="tracking.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
@@ -104,6 +105,7 @@
     <ClCompile Include="hooks.cpp" />
     <ClCompile Include="memory.cpp" />
     <ClCompile Include="scan.cpp" />
+    <ClCompile Include="tracking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\libMinHook.x64.lib" />

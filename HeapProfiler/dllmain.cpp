@@ -6,13 +6,16 @@
 #include "hooks.h"
 
 #include "gui.h"
+#include <thread>
+
+void GUIThread() {
+    initGUI();
+}
 
 void mainThread() {
-    
     MH_Initialize();
 
     MODULEINFO heapprof_info = GetModuleInfo(L"HeapProfiler.dll");
-    //cout << "HPROF> base: " << heapprof_info.lpBaseOfDll << " | size: " << hex << heapprof_info.SizeOfImage << endl;
 
     vector<MallocFunc> mallocs_found;
 
@@ -30,18 +33,15 @@ void mainThread() {
             vector<MallocFunc> found = ScanRegion(Mem);
             mallocs_found.insert(mallocs_found.end(), found.begin(), found.end());
         }
+        GUI_setScanProgress((float)(i+1) / regions.size());
     }
 
-    char c; cin >> c;
     for (auto m : mallocs_found) {
-        cout << m.addr << ": " << m.version.name << " at " << GetModuleNameAt(m.addr) << endl;
         createHook(m);
+        
+        
+        GUI_addMallocFunc(to_hex(m.addr) + ": " + m.version.name + " in " + GetModuleNameAt(m.addr));
     }
-    
-
-    
-
-    //initGUI(mallocs_found);
 }
 
 BOOL APIENTRY DllMain(HINSTANCE hInst     /* Library instance handle. */,
@@ -58,20 +58,7 @@ BOOL APIENTRY DllMain(HINSTANCE hInst     /* Library instance handle. */,
         freopen("CONIN$", "r", stdin);
         freopen("CONOUT$", "w", stdout);
 
-        //cout << "< HPROF v0.1 >" << endl;
-
-        // MinHook setup
-        //cout << "HPROF> Initializing MinHook..." << endl;
-
-        /*if (MH_Initialize() != MH_OK)
-        {
-            cout << "HPROF> error: MinHook setup failed!" << endl;
-            //return FALSE;
-        }*/
-        //DisableThreadLibraryCalls(hInst);
-
-        //cout << "HPROF> MinHook setup success" << endl;
-        //cout << "HPROF> creating main thread" << endl;
+        CreateThread(0, 0, (LPTHREAD_START_ROUTINE)GUIThread, 0, 0, 0);
         CreateThread(0, 0, (LPTHREAD_START_ROUTINE)mainThread, 0, 0, 0);
         break;
 

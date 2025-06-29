@@ -5,6 +5,7 @@
 #include <string> 
 #include <iostream>
 #include <stacktrace>
+#include "tracking.h"
 
 static int nextHandlerID = 1;
 class Handler {
@@ -39,14 +40,6 @@ public:
 		init = GetProcAddress(handlerDLL, "InitHandler");
 	}
 };
-
-void cb_malloc(DWORD32 hId, ADDRESS addr, size_t size) {
-	cout << "h(" << hId << ") " << hex << addr << ": " << size << endl;
-}
-
-void cb_free(DWORD32 hId, ADDRESS addr) {
-
-}
 
 void createHook(MallocFunc func) {
 	Handler* handler = new Handler(func.version.dll);

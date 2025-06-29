@@ -4,11 +4,13 @@
 
 #include <d3d9.h>*/
 #include "common.h"
-#include "memory.h"
-#include <ftxui/component/screen_interactive.hpp>
-#include <ftxui/component/component.hpp>
-#include <ftxui/component/component_options.hpp>
-#include <ftxui/dom/elements.hpp>
-#include <ftxui/screen/screen.hpp>
-#include "scan.h"
-void initGUI(vector<MallocFunc>& mallocs);
+void initGUI();
+
+std::string to_hex(ADDRESS i);
+
+// GUI functions
+void GUI_setScanProgress(float p);
+void GUI_addMallocFunc(string description);
+
+void GUI_Print();
+void GUI_Loop();
