@@ -6,9 +6,9 @@ struct MallocVersion {
   char* name;
   char* pattern;
   char* mask;
-  void* detour;
-  void** original;
-  MallocVersion(char* name, char* pattern, char* mask, void* detour, void** original) : name(name), pattern(pattern), mask(mask), detour(detour), original(original) {
+  
+  string dll;
+  MallocVersion(char* name, char* pattern, char* mask, string dll) : name(name), pattern(pattern), mask(mask), dll(dll) {
 
   }
 };

@@ -102,6 +102,18 @@ MODULEINFO GetModuleInfo( LPCWSTR szModule )
     return modinfo;
 }
 
+string GetDLLFolder() {
+    TCHAR buffer[MAX_PATH];
+    GetModuleFileNameW(GetModuleHandleA("HeapProfiler.dll"), buffer, MAX_PATH);
+    wstring wpath(buffer);
+
+    string fname = string(wpath.begin(), wpath.end());
+
+    size_t pos = fname.find_last_of("\\/");
+
+    return fname.substr(0, pos);
+}
+
 /*HMODULE GetModuleAt(ADDRESS addr) {
     MEMORY_BASIC_INFORMATION mbi;
     if (VirtualQuery((void*)addr, &mbi, sizeof(mbi)))

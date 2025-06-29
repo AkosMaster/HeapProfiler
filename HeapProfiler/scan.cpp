@@ -4,8 +4,8 @@
 #include "hooks.h"
 
 std::vector<MallocVersion> malloc_versions = {
-  MallocVersion((char*)"msvcrt_x86_0", (char*)"\x8b\xff\x55\x8b\xec\x83\x3d\x00\x00\x00\x00\x00\x75\x00\xe8", (char*)"xxxxxxx?????x?x", (void*)&hk_malloc_msvcrtx86_0, &o_malloc_msvcrtx86_0),
-  MallocVersion((char*)"msvcrt_x64_0", (char*)"\x48\x89\x5c\x24\x00\x48\x89\x74\x24\x00\x57\x48\x83\xec\x00\x48\x83\x3d", (char*)"xxxx?xxxx?xxxx?xxx", (void*)&hk_malloc_msvcrtx64_0, &o_malloc_msvcrtx64_0)
+  MallocVersion((char*)"msvcrt_x86_0", (char*)"\x8b\xff\x55\x8b\xec\x83\x3d\x00\x00\x00\x00\x00\x75\x00\xe8", (char*)"xxxxxxx?????x?x", "malloc\\malloc86.dll"),
+  MallocVersion((char*)"msvcrt_x64_0", (char*)"\x48\x89\x5c\x24\x00\x48\x89\x74\x24\x00\x57\x48\x83\xec\x00\x48\x83\x3d", (char*)"xxxx?xxxx?xxxx?xxx", "malloc\\malloc64.dll")
 };
 
 vector<ADDRESS> FindPattern(ADDRESS base, ADDRESS size, char pattern[], char mask[] )

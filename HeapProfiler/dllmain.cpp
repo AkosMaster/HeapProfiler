@@ -35,7 +35,16 @@ void mainThread() {
         }
     }
 
-    initGUI(mallocs_found);
+    char c; cin >> c;
+    for (auto m : mallocs_found) {
+        cout << m.addr << ": " << m.version.name << " at " << GetModuleNameAt(m.addr) << endl;
+        createHook(m);
+    }
+    
+
+    
+
+    //initGUI(mallocs_found);
 }
 
 BOOL APIENTRY DllMain(HINSTANCE hInst     /* Library instance handle. */,

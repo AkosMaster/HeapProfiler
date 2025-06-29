@@ -8,7 +8,7 @@ void PrintRegion(MEMORY_BASIC_INFORMATION Mem);
 vector<MEMORY_BASIC_INFORMATION> GetMemoryRegions();
 MODULEINFO GetModuleInfo( LPCWSTR szModule );
 //HMODULE GetModuleAt(ADDRESS addr);
-
+string GetDLLFolder();
 bool isExecutable(DWORD protection);
 
 
