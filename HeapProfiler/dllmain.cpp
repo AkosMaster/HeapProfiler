@@ -11,9 +11,6 @@ void mainThread() {
     
     MH_Initialize();
 
-    
-
-    
     MODULEINFO heapprof_info = GetModuleInfo(L"HeapProfiler.dll");
     //cout << "HPROF> base: " << heapprof_info.lpBaseOfDll << " | size: " << hex << heapprof_info.SizeOfImage << endl;
 

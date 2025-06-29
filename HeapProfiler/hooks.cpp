@@ -12,8 +12,8 @@ class Handler {
 	HMODULE handlerDLL;
 	int id;
 public:
-	void Init(ADDRESS ofunc) {
-		((void(*)(DWORD32, ADDRESS))init)(id, ofunc);
+	void Init(ADDRESS ofunc, ADDRESS cb_malloc, ADDRESS cb_free) {
+		((void(*)(DWORD32, ADDRESS, ADDRESS, ADDRESS))init)(id, ofunc, cb_malloc, cb_free);
 	}
 
 	void* GetHook() {
@@ -40,6 +40,14 @@ public:
 	}
 };
 
+void cb_malloc(DWORD32 hId, ADDRESS addr, size_t size) {
+	cout << "h(" << hId << ") " << hex << addr << ": " << size << endl;
+}
+
+void cb_free(DWORD32 hId, ADDRESS addr) {
+
+}
+
 void createHook(MallocFunc func) {
 	Handler* handler = new Handler(func.version.dll);
 	void* ofunc;
@@ -47,7 +55,7 @@ void createHook(MallocFunc func) {
 	{
 		cout << "HPROF> error: createHook error" << endl;
 	}
-	handler->Init((ADDRESS)ofunc);
+	handler->Init((ADDRESS)ofunc, (ADDRESS)cb_malloc, (ADDRESS)cb_free);
 	if (MH_EnableHook((void*)func.addr) != MH_OK)
 	{
 		cout << "HPROF> error: enableHook error" << endl;

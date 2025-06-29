@@ -3,10 +3,11 @@
 
 //#include <windows.h>
 //#include <iostream>
-#include <stdint.h>
+
 using namespace std;
 #define DLL1_API __declspec(dllexport)
 
+#include <stdint.h>
 #define DWORD32 uint32_t
 #define DWORD64 uint64_t
 
@@ -28,9 +29,14 @@ using namespace std;
 DWORD32 handlerID = -1;
 ADDRESS ofunc;
 
-extern "C" DLL1_API void InitHandler(DWORD32 _handlerID, ADDRESS _ofunc) {
+ADDRESS cb_malloc;
+ADDRESS cb_free;
+
+extern "C" DLL1_API void InitHandler(DWORD32 _handlerID, ADDRESS _ofunc, ADDRESS _cb_malloc, ADDRESS _cb_free) {
     handlerID = _handlerID;
     ofunc = _ofunc;
+	cb_malloc = _cb_malloc;
+	cb_free = _cb_free;
 }
 
 /* 
@@ -38,11 +44,9 @@ extern "C" DLL1_API void InitHandler(DWORD32 _handlerID, ADDRESS _ofunc) {
 */
 #ifdef HOOK_TYPE_MALLOC
 extern "C" ADDRESS DLL1_API hook(size_t size) {
-	//cout << handlerID << ": " << "size: " << size << " | ret: ";
-
-	ADDRESS v = ((ADDRESS(*)(size_t))ofunc)(size);
-	//cout << hex << v << endl;
-	return v;
+	ADDRESS addr = ((ADDRESS(*)(size_t))ofunc)(size);
+	((void(*)(DWORD32, ADDRESS, size_t))cb_malloc)(handlerID, addr, size);
+	return addr;
 }
 #endif
 
@@ -51,7 +55,7 @@ extern "C" ADDRESS DLL1_API hook(size_t size) {
 */
 #ifdef HOOK_TYPE_FREE
 extern "C" void DLL1_API hook(ADDRESS addr) {
-	//cout << "free hooked" << endl;
 	((void(*)(ADDRESS))ofunc)(addr);
+	((void(*)(DWORD32, ADDRESS))cb_free)(handlerID, addr);
 }
 #endif
