@@ -33,7 +33,7 @@ void mainThread() {
             vector<MallocFunc> found = ScanRegion(Mem);
             mallocs_found.insert(mallocs_found.end(), found.begin(), found.end());
         }
-        //GUI_setScanProgress((float)(i+1) / regions.size());
+        GUI_setScanProgress((float)(i+1) / regions.size());
     }
 
     for (auto m : mallocs_found) {
@@ -50,7 +50,12 @@ BOOL APIENTRY DllMain(HINSTANCE hInst     /* Library instance handle. */,
 {
     switch (reason)
     {
-    case DLL_PROCESS_ATTACH:        
+    case DLL_PROCESS_ATTACH:      
+
+        AllocConsole();
+        freopen("CONOUT$", "w", stdout);
+        cout << "asd" << "\n";
+
         CreateThread(0, 0, (LPTHREAD_START_ROUTINE)GUIThread, 0, 0, 0);
         CreateThread(0, 0, (LPTHREAD_START_ROUTINE)mainThread, 0, 0, 0);
         break;
