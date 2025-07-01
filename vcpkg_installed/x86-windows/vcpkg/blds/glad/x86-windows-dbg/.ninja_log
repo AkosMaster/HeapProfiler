@@ -1,0 +1,8 @@
+# ninja log v6
+7	606	7730794064450448	include/glad/glad.h	3108f0ffc08481f0
+7	606	7730794064450448	src/glad.c	3108f0ffc08481f0
+7	606	7730794064450448	C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/x86-windows/vcpkg/blds/glad/x86-windows-dbg/include/glad/glad.h	3108f0ffc08481f0
+7	606	7730794064450448	C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/x86-windows/vcpkg/blds/glad/x86-windows-dbg/src/glad.c	3108f0ffc08481f0
+608	943	7730794065565869	CMakeFiles/glad.dir/src/glad.c.obj	f3efbc7740765495
+945	992	7730794068901816	glad.lib	167bcf0356fb462c
+992	1057	7730794069455673	CMakeFiles/install.util	a434aca55932fdcf

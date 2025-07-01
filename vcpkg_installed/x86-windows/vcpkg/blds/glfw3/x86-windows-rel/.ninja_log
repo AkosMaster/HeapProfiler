@@ -1,0 +1,26 @@
+# ninja log v6
+24	509	7730793865879130	src/CMakeFiles/glfw.dir/platform.c.obj	eb4ae5125649f564
+36	568	7730793865997448	src/CMakeFiles/glfw.dir/window.c.obj	740b4828cd27d613
+15	580	7730793865798742	src/CMakeFiles/glfw.dir/init.c.obj	c848099f3175ee44
+20	590	7730793865838928	src/CMakeFiles/glfw.dir/monitor.c.obj	5c4629e36c723db1
+30	602	7730793865937073	src/CMakeFiles/glfw.dir/vulkan.c.obj	27b7e8d8456c9c00
+11	613	7730793865738411	src/CMakeFiles/glfw.dir/context.c.obj	89f0bc71e1a495fa
+18	625	7730793865818817	src/CMakeFiles/glfw.dir/input.c.obj	45bba664fa924329
+41	635	7730793866055268	src/CMakeFiles/glfw.dir/egl_context.c.obj	b0e46cdf3739d005
+591	1036	7730793871554857	src/CMakeFiles/glfw.dir/null_joystick.c.obj	13e13c4b9d70ce22
+48	1047	7730793866126150	src/CMakeFiles/glfw.dir/osmesa_context.c.obj	57c6381fab73b6be
+512	1056	7730793870761851	src/CMakeFiles/glfw.dir/null_init.c.obj	20af87740a3d3a72
+569	1065	7730793871337242	src/CMakeFiles/glfw.dir/null_monitor.c.obj	47dc33ed39d56103
+580	1072	7730793871449368	src/CMakeFiles/glfw.dir/null_window.c.obj	ee12f9f6b339f679
+614	1082	7730793871787533	src/CMakeFiles/glfw.dir/win32_time.c.obj	82fe8f93c47c54c5
+603	1088	7730793871669649	src/CMakeFiles/glfw.dir/win32_module.c.obj	9d104bbcb43ca935
+625	1194	7730793871904622	src/CMakeFiles/glfw.dir/win32_thread.c.obj	ebc964e68087d4ad
+636	1199	7730793871964904	src/CMakeFiles/glfw.dir/win32_init.c.obj	739154f288d71383
+1072	1228	7730793876374517	src/CMakeFiles/glfw.dir/glfw.rc.res	797c024333197b81
+1047	1410	7730793876098662	src/CMakeFiles/glfw.dir/win32_monitor.c.obj	65115c4b23c09b77
+1036	1420	7730793876015952	src/CMakeFiles/glfw.dir/win32_joystick.c.obj	5d6508b90a0110cb
+1065	1441	7730793876296250	src/CMakeFiles/glfw.dir/wgl_context.c.obj	cd4167356f4fe56d
+1056	1498	7730793876197033	src/CMakeFiles/glfw.dir/win32_window.c.obj	46690ca0efd846a
+1499	1667	7730793882040014	src/glfw3.dll	71e44e3a71d665e2
+1499	1667	7730793882040014	src/glfw3dll.lib	71e44e3a71d665e2
+1668	1719	7730793882197517	CMakeFiles/install.util	889068292854fa13

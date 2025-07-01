@@ -1,0 +1,26 @@
+# ninja log v6
+19	385	7730639360466559	src/CMakeFiles/glfw.dir/monitor.c.obj	39304b540706d927
+22	401	7730639360466559	src/CMakeFiles/glfw.dir/platform.c.obj	8b1f21a4434d0ea
+10	411	7730639360408862	src/CMakeFiles/glfw.dir/context.c.obj	6c5e8236bb0f952c
+25	419	7730639360565381	src/CMakeFiles/glfw.dir/vulkan.c.obj	966cbfea3a8f37dc
+16	428	7730639360466559	src/CMakeFiles/glfw.dir/input.c.obj	b1ff767cb5467de
+13	440	7730639360428932	src/CMakeFiles/glfw.dir/init.c.obj	3c5c34b5c3387853
+30	451	7730639360612828	src/CMakeFiles/glfw.dir/window.c.obj	81b5022128d9e8eb
+35	461	7730639360622932	src/CMakeFiles/glfw.dir/egl_context.c.obj	c1017569be57045a
+39	469	7730639360695356	src/CMakeFiles/glfw.dir/osmesa_context.c.obj	e487957bd717242a
+389	806	7730639364202713	src/CMakeFiles/glfw.dir/null_init.c.obj	a68ad8a462099649
+412	817	7730639364419754	src/CMakeFiles/glfw.dir/null_window.c.obj	a381300bf6444fe8
+430	828	7730639364617207	src/CMakeFiles/glfw.dir/win32_module.c.obj	36c58642b38d8fd2
+420	839	7730639364419754	src/CMakeFiles/glfw.dir/null_joystick.c.obj	6f3aad2eb1a807ba
+441	859	7730639364717053	src/CMakeFiles/glfw.dir/win32_time.c.obj	604ae4f156200f8c
+401	863	7730639364325346	src/CMakeFiles/glfw.dir/null_monitor.c.obj	11bfe831a427709a
+452	953	7730639364774793	src/CMakeFiles/glfw.dir/win32_thread.c.obj	d6482ba8af622687
+462	957	7730639364916397	src/CMakeFiles/glfw.dir/win32_init.c.obj	3e5840b7a61017bc
+839	1026	7730639368701835	src/CMakeFiles/glfw.dir/glfw.rc.res	5b89564885d7ba06
+469	1039	7730639364996797	src/CMakeFiles/glfw.dir/win32_joystick.c.obj	d6a17ab9b4b6791
+807	1127	7730639368369983	src/CMakeFiles/glfw.dir/win32_monitor.c.obj	5a06594af7c271a3
+829	1131	7730639368568112	src/CMakeFiles/glfw.dir/wgl_context.c.obj	b54035323ae6464e
+817	1138	7730639368450286	src/CMakeFiles/glfw.dir/win32_window.c.obj	df7d167be01e0b99
+1138	1382	7730639373758431	src/glfw3.dll	b498f1721f1f1a94
+1138	1382	7730639373758431	src/glfw3dll.lib	b498f1721f1f1a94
+1382	1431	7730639374094442	CMakeFiles/install.util	6b6892b84dcbfcb0

@@ -1,0 +1,21 @@
+Package: hello-imgui
+Version: 1.6.0
+Depends: imgui, stb, vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: bd6ab438154ba863a301646f065ff75e5c10af0d099064f140ab746d0769178a
+Description: Hello ImGui: unleash your creativity in app development and prototyping
+
+Package: hello-imgui
+Feature: glfw-binding
+Depends: imgui
+Architecture: x86-windows
+Multi-Arch: same
+Description: Use GLFW platform backend (default)
+
+Package: hello-imgui
+Feature: opengl3-binding
+Depends: glad, imgui
+Architecture: x86-windows
+Multi-Arch: same
+Description: Use OpenGL3/ES2 renderer backend (default)

@@ -1,0 +1,26 @@
+# ninja log v6
+22	446	7730639375154178	src/CMakeFiles/glfw.dir/platform.c.obj	403e704baef03b5b
+26	500	7730639375174289	src/CMakeFiles/glfw.dir/vulkan.c.obj	a9d2383ecafd9c28
+10	514	7730639375021304	src/CMakeFiles/glfw.dir/context.c.obj	459614a276cdea25
+31	530	7730639375237440	src/CMakeFiles/glfw.dir/window.c.obj	a33ea56c71a58ccd
+13	543	7730639375061399	src/CMakeFiles/glfw.dir/init.c.obj	2280fba00635161
+40	555	7730639375335569	src/CMakeFiles/glfw.dir/osmesa_context.c.obj	5b62b251ce168f38
+19	567	7730639375081427	src/CMakeFiles/glfw.dir/monitor.c.obj	d5c4f56479482fe4
+35	751	7730639375277748	src/CMakeFiles/glfw.dir/egl_context.c.obj	8ffe22ebc8e280d8
+15	757	7730639375081427	src/CMakeFiles/glfw.dir/input.c.obj	dfc7b2a95c758bc7
+501	922	7730639379955619	src/CMakeFiles/glfw.dir/null_monitor.c.obj	24db8c8c66eb43f3
+450	930	7730639379439850	src/CMakeFiles/glfw.dir/null_init.c.obj	84f425f0cbee23e4
+531	936	7730639380252291	src/CMakeFiles/glfw.dir/null_joystick.c.obj	35ea72604c64e2fb
+544	943	7730639380372880	src/CMakeFiles/glfw.dir/win32_module.c.obj	a342fc598b98260e
+556	955	7730639380491166	src/CMakeFiles/glfw.dir/win32_time.c.obj	44841bd906f0f226
+567	960	7730639380609224	src/CMakeFiles/glfw.dir/win32_thread.c.obj	b002c4c0772db1aa
+514	1062	7730639380076320	src/CMakeFiles/glfw.dir/null_window.c.obj	69fee596335f8b7d
+943	1068	7730639384367488	src/CMakeFiles/glfw.dir/glfw.rc.res	e6f594867eb71220
+751	1182	7730639382451898	src/CMakeFiles/glfw.dir/win32_init.c.obj	2574c33cc02dabda
+758	1216	7730639382514260	src/CMakeFiles/glfw.dir/win32_joystick.c.obj	8b6be9803b56c32e
+922	1303	7730639384110195	src/CMakeFiles/glfw.dir/win32_monitor.c.obj	475f576b0159744f
+937	1345	7730639384206729	src/CMakeFiles/glfw.dir/wgl_context.c.obj	c35dcd43019d736f
+930	1401	7730639384206729	src/CMakeFiles/glfw.dir/win32_window.c.obj	e489af737130c555
+1401	1531	7730639389914539	src/glfw3.dll	2b3df15cc15f439b
+1401	1531	7730639389914539	src/glfw3dll.lib	2b3df15cc15f439b
+1532	1581	7730639390196914	CMakeFiles/install.util	de8a738a45929f70

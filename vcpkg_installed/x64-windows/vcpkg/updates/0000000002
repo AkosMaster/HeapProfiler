@@ -1,0 +1,8 @@
+Package: hello-imgui
+Version: 1.6.0
+Depends: imgui, stb, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d1977bc74c4f1addce7c781209cf78eeefae92448b958b0348e0b55ce91e81fa
+Description: Hello ImGui: unleash your creativity in app development and prototyping
+Status: purge ok not-installed

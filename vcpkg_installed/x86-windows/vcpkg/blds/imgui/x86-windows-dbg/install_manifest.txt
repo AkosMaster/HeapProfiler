@@ -1,0 +1,4 @@
+C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/x86-windows/vcpkg/pkgs/imgui_x86-windows/debug/lib/imguid.lib
+C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/x86-windows/vcpkg/pkgs/imgui_x86-windows/debug/share/imgui/imgui-config.cmake
+C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/x86-windows/vcpkg/pkgs/imgui_x86-windows/debug/share/imgui/imgui-targets.cmake
+C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/x86-windows/vcpkg/pkgs/imgui_x86-windows/debug/share/imgui/imgui-targets-debug.cmake

@@ -1,9 +1,0 @@
-prefix="C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/vcpkg/pkgs/ftxui_x64-windows"
-libdir="C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/vcpkg/pkgs/ftxui_x64-windows/lib"
-includedir="C:/Users/akosd/source/repos/HeapProfiler/vcpkg_installed/vcpkg/pkgs/ftxui_x64-windows/include"
-
-Name: ftxui
-Description: C++ Functional Terminal User Interface.
-Version: 5.0.0
-Cflags: -I${includedir}
-Libs: -L${libdir} -lftxui-component -lftxui-dom -lftxui-screen

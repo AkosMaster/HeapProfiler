@@ -33,12 +33,12 @@ void mainThread() {
             vector<MallocFunc> found = ScanRegion(Mem);
             mallocs_found.insert(mallocs_found.end(), found.begin(), found.end());
         }
-        GUI_setScanProgress((float)(i+1) / regions.size());
+        //GUI_setScanProgress((float)(i+1) / regions.size());
     }
 
     for (auto m : mallocs_found) {
         createHook(m);    
-        GUI_addMallocFunc(to_hex(m.addr) + ": " + m.version.name + " in " + GetModuleNameAt(m.addr));
+        //GUI_addMallocFunc(to_hex(m.addr) + ": " + m.version.name + " in " + GetModuleNameAt(m.addr));
     }
 
     
@@ -50,14 +50,7 @@ BOOL APIENTRY DllMain(HINSTANCE hInst     /* Library instance handle. */,
 {
     switch (reason)
     {
-    case DLL_PROCESS_ATTACH:
-        //MessageBox (0, "From DLL\n", "Process Attach", MB_ICONINFORMATION);
-        //MessageBoxA(0, "", "Heap Profiler injected!", MB_OK | MB_ICONINFORMATION);
-
-        AllocConsole();
-        freopen("CONIN$", "r", stdin);
-        freopen("CONOUT$", "w", stdout);
-
+    case DLL_PROCESS_ATTACH:        
         CreateThread(0, 0, (LPTHREAD_START_ROUTINE)GUIThread, 0, 0, 0);
         CreateThread(0, 0, (LPTHREAD_START_ROUTINE)mainThread, 0, 0, 0);
         break;

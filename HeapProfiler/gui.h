@@ -9,9 +9,3 @@ void initGUI();
 std::string to_hex(ADDRESS i);
 
 // GUI functions
-void GUI_setScanProgress(float p);
-void GUI_addMallocFunc(string description);
-void GUI_refreshAllocList();
-
-void GUI_Print();
-void GUI_Loop();

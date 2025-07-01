@@ -1,0 +1,7 @@
+Package: hello-imgui
+Feature: opengl3-binding
+Depends: glad, imgui
+Architecture: x86-windows
+Multi-Arch: same
+Description: Use OpenGL3/ES2 renderer backend (default)
+Status: install ok half-installed

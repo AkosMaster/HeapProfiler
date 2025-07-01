@@ -1,0 +1,7 @@
+Package: hello-imgui
+Feature: glfw-binding
+Depends: imgui
+Architecture: x64-windows
+Multi-Arch: same
+Description: Use GLFW platform backend (default)
+Status: purge ok half-installed

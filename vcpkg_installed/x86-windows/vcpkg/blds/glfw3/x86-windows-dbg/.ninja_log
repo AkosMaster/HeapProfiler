@@ -1,0 +1,26 @@
+# ninja log v6
+30	448	7730793850133084	src/CMakeFiles/glfw.dir/vulkan.c.obj	15cdbf0a45824df2
+12	466	7730793849930517	src/CMakeFiles/glfw.dir/context.c.obj	362ea32616cd4d3
+21	477	7730793850022990	src/CMakeFiles/glfw.dir/monitor.c.obj	95ea38eff9ad4111
+15	489	7730793849930517	src/CMakeFiles/glfw.dir/init.c.obj	941d8f4f42144d9f
+25	503	7730793850087529	src/CMakeFiles/glfw.dir/platform.c.obj	8de78db2a8bd5181
+18	517	7730793849930517	src/CMakeFiles/glfw.dir/input.c.obj	fdb646980a4273a8
+34	530	7730793850178749	src/CMakeFiles/glfw.dir/window.c.obj	1e3ccebdecf3f38c
+39	537	7730793850219010	src/CMakeFiles/glfw.dir/egl_context.c.obj	79551b858ecbcf36
+45	546	7730793850259249	src/CMakeFiles/glfw.dir/osmesa_context.c.obj	a58b8bcf7dd729c9
+467	901	7730793854511580	src/CMakeFiles/glfw.dir/null_monitor.c.obj	6132bfe73fb3cd04
+451	910	7730793854353249	src/CMakeFiles/glfw.dir/null_init.c.obj	f41b09f47e69e61e
+518	916	7730793855011037	src/CMakeFiles/glfw.dir/win32_time.c.obj	a29227b21e0d34a5
+489	924	7730793854730985	src/CMakeFiles/glfw.dir/null_joystick.c.obj	b85c094ed3b2c40d
+504	994	7730793854868476	src/CMakeFiles/glfw.dir/win32_module.c.obj	d09c9d3f2e37333a
+478	999	7730793854611911	src/CMakeFiles/glfw.dir/null_window.c.obj	91684aa88dc9c7fc
+538	1003	7730793855124770	src/CMakeFiles/glfw.dir/win32_init.c.obj	7b1b533653beaeaa
+530	1012	7730793855124770	src/CMakeFiles/glfw.dir/win32_thread.c.obj	76af7f0f51474130
+924	1063	7730793859063732	src/CMakeFiles/glfw.dir/glfw.rc.res	cde33c2f5d620d6f
+547	1113	7730793855302735	src/CMakeFiles/glfw.dir/win32_joystick.c.obj	2c758b9509b1bc25
+902	1184	7730793858855582	src/CMakeFiles/glfw.dir/win32_monitor.c.obj	5090d64fb531c1b
+910	1198	7730793858925488	src/CMakeFiles/glfw.dir/win32_window.c.obj	476ebe47f3781366
+917	1206	7730793859003475	src/CMakeFiles/glfw.dir/wgl_context.c.obj	3c45681ff56e276d
+1206	1488	7730793864310088	src/glfw3.dll	1a813fd57d059721
+1206	1488	7730793864310088	src/glfw3dll.lib	1a813fd57d059721
+1488	1547	7730793864620976	CMakeFiles/install.util	9bf2f0644a9e783a
